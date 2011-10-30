@@ -42,5 +42,5 @@ It also stores the min and max temperature for that calendar day, so if you want
 to find what the min and max temperatures on your birthday were:
 
 ```
->> $DB['weather_analysis'].find(:airport_code => 'JFK', :day => 27, :month => 3)
+>> $DB['weather_analysis'].find(:airport_code => 'JFK', :day => 27, :month => 3).to_a
 ```
