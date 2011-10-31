@@ -1,6 +1,8 @@
 Weather History
 =========
 
+(This was inspired by John Resig's post about weather data: http://ejohn.org/blog/historical-weather-data/)
+
 This tool uses history weather data from Weather Underground to analyze the
 number of snow or rain days historically. I built it to answer the question:
 How many days of the year in NYC have never had rain. In other words, is there
