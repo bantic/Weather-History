@@ -24,8 +24,8 @@ $ gem install bundler
 $ bundle
 $ irb -r ./config/boot.rb
 >> airport_code = 'JFK'
->> 1984.upto(2010) {|year| $COLL.insert(WeatherHistory.parse(y))};
->> analyzer = WeatherHistory::Analyzer.new('JFK')
+>> 1984.upto(2010) {|year| $COLL.insert(WeatherHistory.parse(y, airport_code))};
+>> analyzer = WeatherHistory::Analyzer.new(airport_code)
 >> $DB['weather_analysis'].insert(analyzer.analyze)
 ```
 
@@ -35,12 +35,12 @@ the analyzed data in a collection 'weather_analysis'.  You can then query it for
 days which historically have had no rain by doing:
 
 ```
->> $DB['weather_analysis'].find(:rain_count => 0, :airport_code => 'JFK').to_a
+>> $DB['weather_analysis'].find(:rain_count => 0, :airport_code => airport_code).to_a
 ```
 
 It also stores the min and max temperature for that calendar day, so if you want
 to find what the min and max temperatures on your birthday were:
 
 ```
->> $DB['weather_analysis'].find(:airport_code => 'JFK', :day => 27, :month => 3).to_a
+>> $DB['weather_analysis'].find(:airport_code => airport_code, :day => 27, :month => 3).to_a
 ```
